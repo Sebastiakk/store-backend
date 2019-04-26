@@ -1,0 +1,25 @@
+{
+  "name": "store-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebastiakk/store-backend.git"
+  },
+  "keywords": [],
+  "author": "Sebastian <sebastianramirezherrera@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sebastiakk/store-backend/issues"
+  },
+  "homepage": "https://github.com/Sebastiakk/store-backend#readme",
+  "dependencies": {
+    "colors": "^1.3.3",
+    "express": "^4.16.4",
+    "mysql2": "^1.6.5"
+  }
+}
