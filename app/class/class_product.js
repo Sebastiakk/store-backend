@@ -20,6 +20,14 @@ class class_products {
         }
     }
 
+    async related_product(id) {
+        try {
+            return await mysql.get(`SELECT producto.id_producto, producto.nombre_producto, producto.stock, producto.foto, producto.precio, producto.descripcion, producto.id_marca, producto.estado, producto.fecha_creaciom FROM producto INNER JOIN categoria_producto ON categoria_producto.id_producto = producto.id_producto WHERE categoria_producto.id_categoria = ( SELECT categoria_producto.id_categoria FROM producto INNER JOIN categoria_producto ON categoria_producto.id_producto = producto.id_producto WHERE producto.id_producto = ? ) AND producto.id_producto != ?`, [id, id]);
+        } catch (error) {
+            throw new Error(error);
+        }
+    }
+
     async product(id) {
         try {
             let data = {};

@@ -11,5 +11,34 @@ class class_cart {
             throw new Error(error);
         }
     }
+
+    async shop(data, callback = (res) => {}) {
+        mysql.beginTransaction(async () => {
+            try {
+                let sql = '',
+                    datos = [],
+                    error = false;
+                for (const i of data) {
+                    sql = sql + `UPDATE producto SET stock = (stock - ${i.amount}) WHERE id_producto = ${i.prodct} AND stock >= ${i.amount};`;
+                }
+                const result = await mysql.update(sql);
+                for (const i in result) {
+                    if (i.affectedRows === 0) {
+                        error = true;
+                    }
+                }
+                if (!error) {
+                    mysql.commit();
+                    callback(true);
+                } else {
+                    callback(false);
+                }
+            } catch (error) {
+                console.log(error);
+                mysql.rollback();
+                callback(error);
+            }
+        });
+    }
 }
 module.exports = new class_cart();

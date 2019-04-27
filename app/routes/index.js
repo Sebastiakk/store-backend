@@ -7,4 +7,7 @@ module.exports = [{
 }, {
     path: "/cart",
     data: require('./route_cart')
+}, , {
+    path: "/brand",
+    data: require('./route_brand')
 }];

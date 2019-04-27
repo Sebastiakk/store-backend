@@ -17,6 +17,8 @@ router.get('/', async (req, res) => {
     }
 });
 
+
+
 router.get('/category/:id', async (req, res) => {
     try {
         const resultado = await _class.all_products_categories(req.params.id);
@@ -35,5 +37,13 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.get('/related/:id', async (req, res) => {
+    try {
+        const resultado = await _class.related_product(req.params.id);
+        return res.json(_200(resultado));
+    } catch (error) {
+        return res.status(500).json(_500());
+    }
+});
 
 module.exports = router;

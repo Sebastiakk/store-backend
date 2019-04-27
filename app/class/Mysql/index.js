@@ -11,7 +11,7 @@ class MySql {
     }
 
     conectar() {
-        return this.mysql.createPool({
+        return this.mysql.createConnection({
             host: Mysql.host,
             user: Mysql.user,
             port: Mysql.port,
@@ -25,7 +25,7 @@ class MySql {
     }
 
     estado() {
-        this.conexion.getConnection(function (err) {
+        this.conexion.connect(function (err) {
             if (err) {
                 console.log(colors.red.bold('[MySql] => \t Error en la conexion'))
             } else {
