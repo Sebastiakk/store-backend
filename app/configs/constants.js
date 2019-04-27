@@ -6,10 +6,10 @@ module.exports = {
         },
     },
     Mysql: {
-        host: 'sql173.main-hosting.eu',
-        user: 'u460864145_store',
+        host: 'localhost',
+        user: 'root',
         port: 3306,
-        password: 'Gb8QIn2eRBCU',
-        database: 'u460864145_store'
+        password: '',
+        database: 'store'
     }
 };

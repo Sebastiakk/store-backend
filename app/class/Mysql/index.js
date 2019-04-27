@@ -16,7 +16,11 @@ class MySql {
             user: Mysql.user,
             port: Mysql.port,
             password: Mysql.password,
-            database: Mysql.database
+            database: Mysql.database,
+            multipleStatements: true,
+            waitForConnections: true,
+            connectionLimit: 10,
+            queueLimit: 0
         });
     }
 
