@@ -1,15 +1,15 @@
 module.exports = {
-    Server: {
-        puerto: 1105 || process.env.PORT,
+    Server: { //Cofiguracion del serivodr
+        puerto: 1234 || process.env.PORT,
         mensaje: function () {
             return `[Server]=> \t Corriendo en el puerto ${this.puerto}`;
         },
     },
-    Mysql: {
+    Mysql: { // Credenciales de la base de datos
         host: 'localhost',
         user: 'root',
         port: 3306,
-        password: '',
+        password: 'Flakers_824',
         database: 'store'
     }
 };

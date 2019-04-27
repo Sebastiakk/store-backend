@@ -1,9 +1,9 @@
-const mysql = require('./MySql');
-
+const path = require('path');
+const mysql = require(path.join(__dirname, 'Mysql'));
 class class_categories {
 
     constructor() {}
-
+    // Todas estas funciones solo ejecutan un query 
     async all_categories() {
         try {
             return await mysql.get(`SELECT categorias.id_categoria, categorias.nombre,categorias.detalle, COUNT( categoria_producto.id_producto ) AS existencias FROM categorias LEFT JOIN categoria_producto ON categoria_producto.id_categoria = categorias.id_categoria WHERE categorias.estado = 'ACTIVO' GROUP BY categorias.id_categoria`);
@@ -11,7 +11,7 @@ class class_categories {
             throw new Error(error);
         }
     }
-    
+
     async category(id) {
         try {
             let data = {};

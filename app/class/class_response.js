@@ -1,5 +1,5 @@
 class class_response {
-
+    // Esta son la clase de respuesta (Status code)
     _200(data, menssage = 'Successful execution') {
         if (data) {
             return {

@@ -1,9 +1,9 @@
-const mysql = require('./MySql');
-
+const path = require('path');
+const mysql = require(path.join(__dirname, 'Mysql'));
 class class_brand {
 
     constructor() {}
-
+    // Todas estas funciones solo ejecutan un query 
     async all_brands() {
         try {
             return await mysql.get(`SELECT marcas.id_marca, marcas.nombre, marcas.logo FROM marcas WHERE marcas.estado = 'ACTIVO'`);
