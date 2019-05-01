@@ -1,7 +1,7 @@
 # VirtualShop [BACKEND] => TEST CondorLabs
 
 [Ver app funcionando](http://www.virtual-shop.tk)
-, [Ver Api funcionando](http://35.196.123.11:1234/product)
+, [Ver Api funcionando](https://www.sebastiakk.ml:1234/product)
 , [Frontend de la app](https://github.com/Sebastiakk/store)
 
 Esta api utiliza NodeJs con Express para las apis y Mysql2 para la conexión a la base de datos 
